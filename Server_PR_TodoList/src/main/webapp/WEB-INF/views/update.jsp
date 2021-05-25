@@ -75,7 +75,7 @@
 				td_todo.focus();
 				return false;
 			}
-			alert("< 추가하기 >" + "\n" + td_todo.value + "\n" + td_place.value)
+			alert("< 수정하기 >" + "\n" + td_todo.value + "\n" + td_place.value)
 			doc.querySelector("form.write").submit();
 		})
 	})
@@ -99,17 +99,17 @@
 			
 			<div>
 				<label>할 일</label>
-				<textarea name="td_todo" rows ="3">${TD.td_todo}</textarea>
+				<textarea name="td_todo" rows ="3"></textarea>
 			</div>
 			
 			<div>
 				<label>장소</label>
-				<input type="text" name="td_place">${TD.td_place}</input>
+				<input type="text" name="td_place"></input>
 			</div>
 			
 			<div>
 				<label></label>
-				<button class="save" type="button">추가</button>
+				<button class="save" type="button">수정</button>
 				<button type="button">다시 작성</button>
 				<button class="home">Home</button>
 			</div>

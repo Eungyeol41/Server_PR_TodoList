@@ -6,20 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>VIEW</title>
+<title>목록 보기</title>
+<link href="${rootPath}/static/css/home.css?ver2021-05-25" rel="stylesheet" />
 <style>
-	table {
-		border-collapse: collapse;
-		width: 80%;
-		margin: 5px auto;
-	}
-	
-	td, th {
-		border: 1px solid gainsboro;
-		padding: 5px;
-		text-align: center;
-	}
-	
 	div.view_btn {
 		width: 80%;
 		margin: 10px auto;
@@ -51,13 +40,15 @@
 	}
 </style>
 <script>
-		document.addEventListener("DOMContentLoaded", function(ev) {
+		document.addEventListener("DOMContentLoaded", function() {
 			document.querySelector("div.view_btn").addEventListener("click", function(ev) {
 				
 				let className = ev.target.className
 				
 				if(className == "btn_home") {
-				
+					
+					document.location.href = "${rootPath}/";
+					
 				} else if(className == "btn_update") {
 				
 					document.location.href = "${rootPath}/todo/update?td_seq=" + ${TD.td_seq};

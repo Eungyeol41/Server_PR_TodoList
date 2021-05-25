@@ -1,0 +1,26 @@
+@charset "UTF-8";
+* {
+	margin: 10px auto;
+	box-sizing: border-box;
+}
+
+h1 {
+	color : white;
+	background-color : #DDDDFF;
+	text-align: center;
+	padding: 2rem;
+	width:90%;
+	margin:10px auto;
+}
+
+table {
+	border-collapse: collapse;
+	width : 80%;
+	margin : 20px auto;
+}
+
+td, th {
+	border: 1px solid gainsboro;
+	padding : 5px;
+	text-align: center;
+}

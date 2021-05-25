@@ -9,6 +9,7 @@ public interface TodoService {
 	public List<TodoVO> selectAll();
 	
 	public TodoVO findById(Long td_seq);
+	public List<TodoVO> findByDate(String td_date);
 	
 	public Integer insert(TodoVO tdVO);
 	public Integer update(TodoVO tdVO);

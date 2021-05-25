@@ -38,7 +38,17 @@ public class TodoController extends HttpServlet{
 			req.setAttribute("TD", tdVO);
 
 			RequestForwardController.forward(req, resp, "view");
-
+		} else if(subPath.equals("/search")) {
+			// 날짜로 검색하기
+			
+			String td_date = req.getParameter("t_date");
+			
+			List<TodoVO> tdList = tdService.findByDate(td_date);
+			
+			req.setAttribute("TDLIST", tdList);
+			
+			RequestForwardController.forward(req, resp, "date");
+			
 		} else if(subPath.equals("/insert")) {
 			// 리스트 추가하기
 			
@@ -64,7 +74,7 @@ public class TodoController extends HttpServlet{
 			TodoVO tdVO = tdService.findById(td_seq);
 			req.setAttribute("TD", tdVO);
 			
-			RequestForwardController.forward(req, resp, "insert");
+			RequestForwardController.forward(req, resp, "update");
 
 		} else if(subPath.equals("/delete")) {
 			// 리스트 삭제하기
@@ -110,6 +120,16 @@ public class TodoController extends HttpServlet{
 			tdVO.setTd_seq(td_seq);
 			tdService.update(tdVO);
 			resp.sendRedirect("/todo/");
+			
+		} else if(subPath.equals("/search")) {
+			
+			String t_date = req.getParameter("t_date");
+			
+			List<TodoVO> tdList = tdService.findByDate(t_date);
+			
+			req.setAttribute("TDLIST", tdList);
+			
+			RequestForwardController.forward(req, resp, "date");
 			
 		}
 		

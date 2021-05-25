@@ -85,6 +85,27 @@ public class TodoServiceImplV1 implements TodoService{
 		}
 		return null;
 	}
+
+	@Override
+	public List<TodoVO> findByDate(String td_date) {
+		// TODO 날짜로 조회하기
+		
+		String sql = " SELECT * FROM tbl_todoList ";
+		sql += " WHERE td_date = ? ";
+		
+		PreparedStatement pStr = null;
+		try {
+			pStr = dbConn.prepareStatement(sql);
+			pStr.setString(1, td_date);
+			List<TodoVO> tdList = this.select(pStr);
+			pStr.close();
+			return tdList;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	@Override
 	public Integer insert(TodoVO tdVO) {
@@ -145,7 +166,7 @@ public class TodoServiceImplV1 implements TodoService{
 		try {
 			pStr = dbConn.prepareStatement(sql);
 			pStr.setLong(1, seq);
-			pStr.executeUpdate();
+			return pStr.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -7,26 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>TO DO LIST</title>
-<style>
-	
-	table {
-		border-collapse: collapse;
-		width: 80%;
-		margin: 5px auto;
-	}
-	td, th {
-		border: 1px solid gainsboro;
-		padding: 5px;
-		text-align: center;
-	}
-	
-	
-</style>
-
+<link href="${rootPath}/static/css/home.css?ver2021-05-25" rel="stylesheet" />
 <script>
-	document.addEventListener("DOMContentLoaded",function(){
-		document.querySelector("table#tdlist")
-		.addEventListener("click",function(ev){
+	document.addEventListener("DOMContentLoaded",function(){ 
+		document.querySelector("table#tdlist").addEventListener("click",function(ev){
 			
 			let tag_name = ev.target.tagName;
 			if(tag_name == "TD") {
